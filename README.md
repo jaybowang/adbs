@@ -12,3 +12,6 @@ Here are some examples:
 sh adbs.sh install example.apk  
 sh adbs.sh uninstall com.example.adbs  
 sh adbs.sh shell rm /data/local/tmp/exampleFile
+
+If you want to control one of your devices maybe this is your choice:  
+https://github.com/ksoichiro/adbs
