@@ -48,7 +48,7 @@ function getDeviceInfo(){
 if [ x$1 == x ]
 then
     echo
-    echo "Control all the connected phones in order with one command."
+    echo "Control all your connected Android devices simultaneously using adb with one command."
     echo "Just like adb -s:"
     echo "\tinstall xxx.apk"
     echo "\tuninstall com.xxx.ooo"
