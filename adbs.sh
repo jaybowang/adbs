@@ -1,4 +1,4 @@
-# Control all your connected android phones in order using adb with one command.
+# Control all your connected Android devices simultaneously using adb with one command.
 # wangjiebo911@gmail.com 2013-06-20
 
 # Get "emulator-5554" from "emulator-5554	device"
@@ -68,7 +68,7 @@ else
 
     numberOfLines=$(echo "$currentDevicesInfo" | wc -l)
     for((i=2;i<=$numberOfLines;i++))
-    do
+    do {
         deviceInfo=$(echo "$currentDevicesInfo" | awk NR==$i)
 
         getSerialNumber "$deviceInfo"
@@ -76,10 +76,12 @@ else
 
         # Get other information
         getDeviceInfo
-
-        echo "$* on $brand\t$model\t$release\t$serialNumber"
-        # Do it
-        adb -s $serialNumber $*
+        
+        echo "\n----- adb -s $serialNumber $*  | $manufacturer"_"$brand"_"$model"_"$release" && echo "\n<<<<< $manufacturer"_"$brand"_"$model"_"$release  $serialNumber:\n$(adb -s $serialNumber $*)"
+    } &
     done
+
+    # wait for all tasks done
+    wait
     echo "\ndone"
 fi
