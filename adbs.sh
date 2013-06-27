@@ -78,6 +78,8 @@ else
         getDeviceInfo
         
         echo "\n----- adb -s $serialNumber $*  | $manufacturer"_"$brand"_"$model"_"$release" && echo "\n<<<<< $manufacturer"_"$brand"_"$model"_"$release  $serialNumber:\n$(adb -s $serialNumber $*)"
+        echo $#
+        echo $!
     } &
     done
 
